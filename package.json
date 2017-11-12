@@ -1,0 +1,26 @@
+{
+  "name": "sketch-site",
+  "version": "1.0.0",
+  "description": "starting point of a new peaks sketch",
+  "private": true,
+  "engines": {
+    "node": "^8",
+    "npm": "^5.3"
+  },
+  "dependencies": {
+    "now": "8.4.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0",
+    "react-scripts": "^1.0.17",
+    "serve": "^6.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "serve": "serve -s build",
+    "now-start": "npm run serve",
+    "deploy": "now"
+  }
+}
