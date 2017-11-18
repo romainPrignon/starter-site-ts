@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:react/recommended"
+  ],
+  "plugins": [
+    "import",
+    "react"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true,
+    "browser": true,
+    "serviceworker": true
+  },
+  "rules": {
+    "no-console": ["off"]
+  }
+}
