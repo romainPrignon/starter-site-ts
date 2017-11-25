@@ -9,9 +9,11 @@
     "react"
   ],
   "parserOptions": {
+    "ecmaVersion":2017,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     }
   },
   "env": {
@@ -22,6 +24,7 @@
     "serviceworker": true
   },
   "rules": {
-    "no-console": ["off"]
+    "no-console": ["off"],
+    "react/prop-types": ["off"]
   }
 }
