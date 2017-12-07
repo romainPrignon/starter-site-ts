@@ -1,11 +1,18 @@
 # sketch-site
 
-Starting point of all peaks prototyping projects
+Point de départ de toutes les applications react Peaks !
+Ce repo permet d'avoir un point de départ pour travailler rapidement sur une application react.
+Il contient le strict minimum pour commencer avec react/redux. Il est fournie avec un exemple d'archi.
 
 ## Installation
 ```sh
 npm install
+rm -rf .git
+git init
+git remote add origin <repo_url>
 ```
+* Renommer les occurences de `sketch-site` dans le code (README et package.json)
+* S'inspirer des providers et controllers (supprimer ce qui n'est pas nécessaire)
 
 ## Usage
 
