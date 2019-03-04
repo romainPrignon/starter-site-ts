@@ -1,38 +1,47 @@
 {
-  "name": "sketch-site",
-  "version": "0.1.0",
-  "description": "starting point of a new peaks sketch",
+  "name": "starter-site-ts",
+  "version": "0.0.0",
+  "description": "React SPA starting point",
   "private": true,
   "engines": {
-    "node": "^8",
-    "npm": "^5.3"
-  },
-  "dependencies": {
-    "axios": "0.17.1",
-    "now": "^8.4.0",
-    "react": "^16.1.0",
-    "react-dom": "^16.1.0",
-    "react-redux": "^5.0.6",
-    "react-router-dom": "^4.2.2",
-    "react-router-redux": "4.0.8",
-    "react-scripts": "^1.0.17",
-    "redux": "^3.7.2",
-    "redux-form": "7.1.1",
-    "redux-thunk": "^2.2.0",
-    "serve": "^6.4.1"
-  },
-  "devDependencies": {
-    "eslint": "^4.11.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-react": "^7.4.0"
+    "node": "^10",
+    "npm": "^6.3"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "dev": "BROWSER=none react-scripts start",
     "eject": "react-scripts eject",
-    "serve": "serve -s build",
-    "now-start": "npm run serve",
-    "deploy": "now"
-  }
+    "start": "react-scripts start",
+    "test": "react-scripts test"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "connected-react-router": "^6.3.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.4",
+    "@types/react": "^16.8.3",
+    "@types/react-dom": "^16.8.2",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "typescript": "^3.3.3"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
