@@ -20,11 +20,6 @@ npm run dev
 ```
 Application will be running on: [http://localhost:3000](http://localhost:3000)
 
-### Lint
-```sh
-npm run lint
-```
-
 ### Test
 ```sh
 npm test
@@ -37,11 +32,15 @@ npm run build
 ```
 Build the application for production under `/build`
 
+### Start
+```sh
+npm start
+```
+Start the application using Docker
+
 ## further docs
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
 # TODO
-- lint ts through eslint
-- lint through react
-- add Dockerfile
-- add start command
+- gestion de la config
+- refacto src
