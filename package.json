@@ -12,10 +12,23 @@
     "lint": "eslint src/",
     "lint:fix": "eslint --fix src/",
     "test": "react-scripts test",
+    "test:coverage": "npm run test -- --coverage || true",
     "build": "react-scripts build",
+    "build:dev": "tsc --noEmit --pretty",
     "start": "node ./server/index.js",
     "eject": "react-scripts eject"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run build:dev && npm run test:coverage"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "dependencies": {
     "axios": "^0.18.0",
     "connected-react-router": "^6.3.1",
@@ -43,12 +56,7 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.5.0",
     "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.3.1",
     "typescript": "^3.3.3"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

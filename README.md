@@ -56,4 +56,5 @@ Start the application using Docker
 - refacto form
 - refacto archi (page, feature, component)
 - refacto redux
-- add tests
+- add tests (remove || true)
+- add ci
