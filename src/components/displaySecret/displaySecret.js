@@ -1,6 +1,6 @@
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {getSecretById} from '../../selectors/secrets'
+import { getSecretById } from '../../selectors/secrets'
 
 import displaySecret from './displaySecret.jsx'
 

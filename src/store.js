@@ -1,6 +1,6 @@
-import {createStore, applyMiddleware} from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import {routerMiddleware} from 'react-router-redux'
+import { routerMiddleware } from 'connected-react-router'
 import createHistory from 'history/createBrowserHistory'
 
 import rootReducer from './reducers'
@@ -14,7 +14,7 @@ const middlewares = [
 
 const configureStore = preloadedState =>
   createStore(
-    rootReducer,
+    rootReducer(history),
     preloadedState,
     applyMiddleware(...middlewares)
   )

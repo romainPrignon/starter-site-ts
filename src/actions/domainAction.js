@@ -1,6 +1,6 @@
 import * as actionTypes from '../actionTypes/domainActionType'
 
-import {getSecretById, postSecret} from '../api/secret'
+import { getSecretById, postSecret } from '../api/secret'
 
 export const addSecret = (secret) => async (dispatch) => {
   const data = await postSecret(secret)

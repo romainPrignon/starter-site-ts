@@ -1,15 +1,15 @@
-import {combineReducers} from 'redux'
-import {routerReducer} from 'react-router-redux'
-import {reducer as formReducer} from 'redux-form'
+import { combineReducers } from 'redux'
+import { connectRouter } from 'connected-react-router'
+// import { reducer as formReducer } from 'redux-form'
 
 import domain from './domainReducer'
 import application from './applicationReducer'
 
-const rootReducer = combineReducers({
+const rootReducer = (history) => combineReducers({
   domain,
   application,
-  router: routerReducer,
-  form: formReducer
+  router: connectRouter(history)
+  // form: formReducer
 })
 
 export default rootReducer

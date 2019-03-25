@@ -20,11 +20,21 @@ npm run dev
 ```
 Application will be running on: [http://localhost:3000](http://localhost:3000)
 
+### Lint
+```sh
+npm run lint
+```
+Lint source code with eslint.
+There is also a `:fix` version
+
 ### Test
 ```sh
 npm test
 ```
-All Tests use Jest framework. Jest runs all *.test.js files
+All Tests use Jest framework.
+
+unit tests: `src/**/*.test.js`
+functionnal tests: `src/tests/**/*.test.js`
 
 ### Build
 ```sh
@@ -42,5 +52,8 @@ Start the application using Docker
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
 # TODO
-- gestion de la config
-- refacto src
+- refacto into ts
+- refacto form
+- refacto archi (page, feature, component)
+- refacto redux
+- add tests
