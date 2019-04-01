@@ -1,4 +1,4 @@
-import * as actionTypes from '../actionTypes/domainActionType'
+import * as actionTypes from '../actionTypes/domain.actiontype'
 
 const initialState = {
   lastSecretId: null,

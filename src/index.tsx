@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from './app'
-import registerServiceWorker from './registerServiceWorker'
-import configureStore from './store'
-import { createBrowserHistory } from 'history'
+import App from './App'
+import registerServiceWorker from './application/registerServiceWorker'
+import createHistory from './application/history'
+import createStore from './application/store'
 
-export const history = createBrowserHistory() // move to application/history.js
-const store = configureStore(history)()
+const history = createHistory()
+const store = createStore(history)()
 
 ReactDOM.render(
   <App store={store} history={history} />,

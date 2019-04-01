@@ -2,16 +2,16 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, Route } from 'react-router-dom'
 
-import './app.css'
+import './App.css'
 
 import IndexView from './views/indexView/indexView'
 import CheckView from './views/checkView/checkView'
 import WhisperView from './views/whisperView/whisperView'
 
 const App = ({ store, history }) => (
-  <Provider store={store}>
-    <Router history={history}>
-      <div className="App">
+  <div className="App">
+    <Provider store={store}>
+      <Router history={history}>
         <Route
           path="/"
           component={IndexView}
@@ -24,9 +24,9 @@ const App = ({ store, history }) => (
           path="/whisper"
           component={WhisperView}
         />
-      </div>
-    </Router>
-  </Provider>
+      </Router>
+    </Provider>
+  </div>
 )
 
 export default App
