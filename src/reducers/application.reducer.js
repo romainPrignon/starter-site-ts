@@ -1,10 +1,10 @@
-import * as actionTypes from '../actionTypes/application.actiontype'
+import { SOME_ACTION } from '../actionTypes/application.actionType'
 
 const initialState = {}
 
 const application = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.SOME_ACTION: {
+    case SOME_ACTION: {
       return state
     }
     default:

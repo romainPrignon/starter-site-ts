@@ -1,4 +1,4 @@
-import * as actionTypes from '../actionTypes/domain.actiontype'
+import { ADD_SECRET, FETCH_SECRET } from '../actionTypes/domain.actionType'
 
 const initialState = {
   lastSecretId: null,
@@ -7,13 +7,13 @@ const initialState = {
 
 const domain = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_SECRET: {
+    case ADD_SECRET: {
       return {
         ...state,
         lastSecretId: action.payload
       }
     }
-    case actionTypes.FETCH_SECRET: {
+    case FETCH_SECRET: {
       return {
         ...state,
         secrets: [

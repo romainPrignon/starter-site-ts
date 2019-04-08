@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { getLastSecretId } from '../../selectors/secrets'
+import { getLastSecretId } from '../../selectors/secret.selector'
 
 import DisplayLastSecretId from './displayLastSecretId.jsx'
 

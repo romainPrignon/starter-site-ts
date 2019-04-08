@@ -2,7 +2,7 @@ import React from 'react'
 // import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
-import { addSecret } from '../../actions/domainAction'
+import { addSecret } from '../../actions/domain.action'
 
 const WhisperSecretForm = ({ handleSubmit, pristine, submitting }) => (
   <form onSubmit={handleSubmit}>
