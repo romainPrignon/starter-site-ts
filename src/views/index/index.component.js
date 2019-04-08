@@ -1,10 +1,10 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import './indexView.css'
+import './index.css'
 
-const IndexView = () => (
-  <div className="IndexView">
+const Index = () => (
+  <div className="Index">
     <h1>Sketch your app !</h1>
     <button>
       <Link to="/whisper">Send a secret</Link>
@@ -15,4 +15,4 @@ const IndexView = () => (
   </div>
 )
 
-export default IndexView
+export default Index

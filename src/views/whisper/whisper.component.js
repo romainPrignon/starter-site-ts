@@ -3,13 +3,13 @@ import React from 'react'
 // import WhisperSecretForm from '../../forms/whisperSecretForm/whisperSecretForm'
 import DisplayLastSecretId from '../../components/displayLastSecretId/displayLastSecretId'
 
-import './whisperView.css'
+import './whisper.css'
 
-const WhisperView = () => (
-  <div className="WhisperView">
+const Whisper = () => (
+  <div className="Whisper">
     {/* <WhisperSecretForm /> */}
     <DisplayLastSecretId />
   </div>
 )
 
-export default WhisperView
+export default Whisper

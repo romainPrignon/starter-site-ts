@@ -4,9 +4,9 @@ import { Router, Route } from 'react-router-dom'
 
 import './App.css'
 
-import IndexView from './views/indexView/indexView'
-import CheckView from './views/checkView/checkView'
-import WhisperView from './views/whisperView/whisperView'
+import Index from './views/index/index.container'
+import Check from './views/check/check.container'
+import Whisper from './views/whisper/whisper.container'
 
 const App = ({ store, history }) => (
   <div className="App">
@@ -14,15 +14,15 @@ const App = ({ store, history }) => (
       <Router history={history}>
         <Route
           path="/"
-          component={IndexView}
+          component={Index}
         />
         <Route
           path="/check"
-          component={CheckView}
+          component={Check}
         />
         <Route
           path="/whisper"
-          component={WhisperView}
+          component={Whisper}
         />
       </Router>
     </Provider>

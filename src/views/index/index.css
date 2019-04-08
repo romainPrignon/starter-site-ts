@@ -1,4 +1,4 @@
-.IndexView {
+.Index {
   width: 50%;
   height: 50%;
   padding: 20px;
@@ -10,13 +10,13 @@
   color: #252525;
 }
 
-.IndexView > button {
+.Index > button {
   margin: 0 40px;
 
   background-color: #E85090;
   color: white;
 }
 
-.IndexView > button:hover {
+.Index > button:hover {
   background-color: #C83070;
 }

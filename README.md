@@ -52,10 +52,13 @@ Start the application using Docker
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
 # TODO
-- refacto form
+- refacto components
+- refacto forms
 - refacto into ts
-- refacto archi (page, feature, component)
+- refacto archi (view, feature, component)
 - refacto redux (domain, application good for 1 dev but what about team ?)
+  - actions > domain > secret
 - add tests (remove || true)
+- css in js
 - add ci
 - test hooks

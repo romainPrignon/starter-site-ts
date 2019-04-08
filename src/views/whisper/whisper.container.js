@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import WhisperView from './whisperView.jsx'
+import Whisper from './whisper.component'
 
 export default connect(
-)(WhisperView)
+)(Whisper)
