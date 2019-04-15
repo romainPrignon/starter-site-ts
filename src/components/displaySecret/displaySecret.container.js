@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import { getSecretById } from '../../selectors/secret.selector'
 
-import displaySecret from './displaySecret.jsx'
+import DisplaySecret from './displaySecret.component'
 
 const mapStateToProps = (state) => {
   // TODO: make a selector
@@ -20,4 +20,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(displaySecret)
+)(DisplaySecret)

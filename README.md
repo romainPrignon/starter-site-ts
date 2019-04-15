@@ -58,6 +58,7 @@ Start the application using Docker
 - refacto archi (view, feature, component)
 - refacto redux (domain, application good for 1 dev but what about team ?)
   - actions > domain > secret
+- refacto props ?? (full object, ids, split into store, params,component,...) ??
 - add tests (remove || true)
 - css in js
 - add ci
