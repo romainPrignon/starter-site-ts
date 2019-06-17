@@ -52,7 +52,6 @@ Start the application using Docker
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
 # TODO
-- react-create-app 3.0
 - refacto into ts
 - refacto archi (view, feature, component) and add a feature layer
 - refacto redux (domain, application good for 1 dev but what about team ?)
