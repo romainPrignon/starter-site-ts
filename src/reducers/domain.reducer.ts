@@ -1,11 +1,14 @@
+import { State } from '../../type'
+import { DomainAction } from '../actions/domain.action'
+
 import { ADD_SECRET, FETCH_SECRET } from '../actionTypes/domain.actionType'
 
 const initialState = {
-  lastSecretId: null,
+  lastSecretId: undefined,
   secrets: []
 }
 
-const domain = (state = initialState, action) => {
+const domain = (state: State['domain'] = initialState, action: DomainAction): State['domain'] => {
   switch (action.type) {
     case ADD_SECRET: {
       return {

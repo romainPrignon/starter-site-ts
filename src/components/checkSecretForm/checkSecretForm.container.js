@@ -2,7 +2,7 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { connect } from 'react-redux'
 
-import { fetchSecret } from '../../actions/domain.action'
+import { fetchSecret } from '../../actions/domain.action.ts'
 
 /**
  * Sometimes there is no need to separate containers and components
