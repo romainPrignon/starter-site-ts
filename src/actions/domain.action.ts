@@ -1,9 +1,10 @@
 import { Dispatch } from 'redux'
-import { Secret } from '../../type'
+import { Secret, State, SecretInput } from '../../type'
 
 import { ADD_SECRET, FETCH_SECRET } from '../actionTypes/domain.actionType'
 
 import { getSecretById, postSecret } from '../effects/secret.effect'
+import { ThunkAction } from 'redux-thunk'
 
 export type AddSecretAction = {
   type: ADD_SECRET,
@@ -15,9 +16,11 @@ export type FetchSecretAction = {
   payload: Secret
 }
 
+export type FetchSecretActionDispatcher = ThunkAction<Promise<FetchSecretAction>, State, {}, FetchSecretAction>
+
 export type DomainAction = AddSecretAction | FetchSecretAction
 
-export const addSecret = (secret: Secret) => async (dispatch: Dispatch<AddSecretAction>): Promise<AddSecretAction> => {
+export const addSecret = (secret: SecretInput) => async (dispatch: Dispatch<AddSecretAction>): Promise<AddSecretAction> => {
   const data = await postSecret(secret)
 
   return dispatch({
@@ -26,7 +29,7 @@ export const addSecret = (secret: Secret) => async (dispatch: Dispatch<AddSecret
   })
 }
 
-export const fetchSecret = (secretId: string) =>
+export const fetchSecret = (secretId: string): FetchSecretActionDispatcher =>
   async (dispatch: Dispatch<FetchSecretAction>): Promise<FetchSecretAction> => {
     const secret = await getSecretById(secretId)
 

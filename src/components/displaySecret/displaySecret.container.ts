@@ -1,10 +1,10 @@
+import { State } from '../../../type'
+
 import { connect } from 'react-redux'
-
-import { getSecretById } from '../../selectors/secret.selector.ts'
-
+import { getSecretById } from '../../selectors/secret.selector'
 import DisplaySecret from './displaySecret.component'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: State) => {
   // TODO: make a selector
   const secretId = state.form.CheckSecretForm
     && state.form.CheckSecretForm.values // eslint-disable-line

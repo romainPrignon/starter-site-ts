@@ -4,6 +4,11 @@ export * from './utils'
 
 export type Secret = {
   id: string
+  content: string
+}
+
+export type SecretInput = {
+  content: string
 }
 
 export type State = {

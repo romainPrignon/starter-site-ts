@@ -1,10 +1,10 @@
+import { State } from '../../../type'
+
 import { connect } from 'react-redux'
-
-import { getLastSecretId } from '../../selectors/secret.selector.ts'
-
+import { getLastSecretId } from '../../selectors/secret.selector'
 import DisplayLastSecretId from './displayLastSecretId.component'
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: State) => ({
   store: {
     lastSecretId: getLastSecretId(state)
   }

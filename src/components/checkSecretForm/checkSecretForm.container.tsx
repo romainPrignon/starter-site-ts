@@ -1,14 +1,28 @@
+import { AnyAction } from 'redux'
+import { ThunkDispatch } from 'redux-thunk'
+
 import React from 'react'
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { connect } from 'react-redux'
 
-import { fetchSecret } from '../../actions/domain.action.ts'
+import { fetchSecret } from '../../actions/domain.action'
+import { State } from '../../../type'
+
+type Props = InjectedFormProps<FormData>
+
+type FormData = {
+  code: string
+}
+
+type FormError = {
+  code?: string
+}
 
 /**
  * Sometimes there is no need to separate containers and components
  * Just export the component, and export default the container
  */
-export const CheckSecretForm = ({ handleSubmit, pristine, submitting }) => (
+export const CheckSecretForm = ({ handleSubmit, pristine, submitting }: Props) => (
   <form onSubmit={handleSubmit}>
     <label>Secret code</label>
     <Field
@@ -24,8 +38,8 @@ export const CheckSecretForm = ({ handleSubmit, pristine, submitting }) => (
 
 const reduxFormOptions = {
   form: 'CheckSecretForm',
-  validate: (values) => {
-    const errors = {}
+  validate: (values: FormData): FormError => {
+    const errors: FormError = {}
 
     if (!values.code) {
       errors.code = 'Please, give me a secret code !'
@@ -35,8 +49,8 @@ const reduxFormOptions = {
   }
 }
 
-const mapDispatchToProps = (dispach) => ({
-  onSubmit: (values) => dispach(fetchSecret(values.code))
+const mapDispatchToProps = (dispach: ThunkDispatch<State, {}, AnyAction>) => ({
+  onSubmit: (values: FormData) => dispach(fetchSecret(values.code))
 })
 
 export default connect(null, mapDispatchToProps)(reduxForm(reduxFormOptions)(CheckSecretForm))

@@ -1,4 +1,4 @@
-import { Secret } from '../../type'
+import { Secret, SecretInput } from '../../type'
 
 import axios from 'axios'
 
@@ -11,7 +11,7 @@ export const getSecretById = async (secretId: string): Promise<Secret> => {
   return response.data
 }
 
-export const postSecret = async (secret: Secret): Promise<string> => {
+export const postSecret = async (secret: SecretInput): Promise<string> => {
   const response = await axios.post(
     `https://sketch-api.romainprignon.fr/listen`,
     secret,
