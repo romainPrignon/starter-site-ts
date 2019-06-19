@@ -1,8 +1,6 @@
-# sketch-site
+# starter-site-ts
 
-Point de départ de toutes les applications react Peaks !
-Ce repo permet d'avoir un point de départ pour travailler rapidement sur une application react.
-Il contient le strict minimum pour commencer avec react/redux. Il est fournie avec un exemple d'archi.
+Starting point of a new React SPA
 
 ## Installation
 ```sh
@@ -11,23 +9,32 @@ rm -rf .git
 git init
 git remote add origin <repo_url>
 ```
-* Renommer les occurences de `sketch-site` dans le code (README et package.json)
-* S'inspirer des providers et controllers (supprimer ce qui n'est pas nécessaire)
+
+Renamed all occurence of starter-site-ts in code (README and package.json)
 
 ## Usage
 
 ### Develop
 ```js
-npm start
+npm run dev
 ```
-
 Application will be running on: [http://localhost:3000](http://localhost:3000)
+
+### Lint
+```sh
+npm run lint
+```
+Lint source code with eslint.
+There is also a `:fix` version
 
 ### Test
 ```sh
 npm test
 ```
-All Tests use Jest framework. Jest runs all *.test.js files
+All Tests use Jest framework.
+
+unit tests: `src/**/*.test.js`
+functionnal tests: `src/tests/**/*.test.js`
 
 ### Build
 ```sh
@@ -35,18 +42,22 @@ npm run build
 ```
 Build the application for production under `/build`
 
-### Deploy
+### Start
 ```sh
-npm run deploy
+npm start
 ```
-This will deploy the application using `now` binary in the zeit cloud.
-Deploy will:
-* npm run build
-* npm run serve
-
-You can see your deployed app using the URL given by `now`
-You can go to [https://zeit.co/dashboard](https://zeit.co/dashboard) to see an overview of your application
+Start the application using Docker
 
 ## further docs
-[Create React App](https://github.com/facebookincubator/create-react-app)
-[zeit/now](https://zeit.co/docs)
+- [Create React App](https://github.com/facebookincubator/create-react-app)
+
+# TODO
+- refacto archi (view, feature, component) and add a feature layer
+- refacto redux (domain, application good for 1 dev but what about team ?)
+  - actions > domain > secret folder
+- refacto props ??
+  - props, store, components, params, actions
+- add tests (remove || true)
+- css in js
+- add ci
+- test hooks

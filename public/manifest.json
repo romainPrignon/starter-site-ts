@@ -1,6 +1,6 @@
 {
-  "short_name": "sketch-site",
-  "name": "sketch-site",
+  "short_name": "starter-site-ts",
+  "name": "starter-site-ts",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,22 @@
+.Index {
+  width: 50%;
+  height: 50%;
+  padding: 20px;
+  margin: 5% auto;
+
+  text-align: center;
+
+  background-color: white;
+  color: #252525;
+}
+
+.Index > button {
+  margin: 0 40px;
+
+  background-color: #E85090;
+  color: white;
+}
+
+.Index > button:hover {
+  background-color: #C83070;
+}
