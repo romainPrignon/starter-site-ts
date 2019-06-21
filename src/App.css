@@ -1,8 +1,10 @@
 body {
   margin: 0;
 
-  background-color: #E85090;
-  color: white;
+  /* background-color: #E85090; */
+  background-color: #FFFFFF;
+  /* color: white; */
+  color: black;
   font-family: Arial;
 }
 
@@ -21,25 +23,4 @@ input {
   padding: 5px;
 
   border: 0px;
-}
-
-button:disabled {
-  width: 60px;
-  line-height: 25px;
-  padding: 10px;
-
-  border: 0px;
-}
-
-button {
-  padding: 10px;
-  line-height: 25px;
-
-  border: 0px;
-
-}
-
-a {
-  text-decoration: none;
-  color: white;
 }

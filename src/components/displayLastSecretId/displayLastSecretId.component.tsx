@@ -12,7 +12,6 @@ type Props = {
 
 const DisplayLastSecretId = ({ store }: Props) => store.lastSecretId ? (
   <div style={style} className="DisplayLastSecretId">
-    <div>Send this code to your friend !</div>
     <div>{store.lastSecretId}</div>
   </div>
 ) : null

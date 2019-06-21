@@ -13,10 +13,11 @@
 .Index > button {
   margin: 0 40px;
 
-  background-color: #E85090;
+  /* background-color: #E85090; */
+  background-color: grey;
   color: white;
 }
 
-.Index > button:hover {
-  background-color: #C83070;
-}
+/* .Index > button:hover { */
+  /* background-color: #C83070; */
+/* } */

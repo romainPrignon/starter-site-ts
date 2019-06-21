@@ -1,37 +1,28 @@
 import { History } from 'history'
+import { Theme } from '@material-ui/core'
 
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Router, Route } from 'react-router-dom'
+import { Router } from 'react-router-dom'
 import { Store } from 'redux'
+import ThemeProvider from '@material-ui/styles/ThemeProvider'
+import Layout from './views/Layout'
 
 import './App.css'
-
-import Index from './views/index/index.container'
-import Check from './views/check/check.container'
-import Whisper from './views/whisper/whisper.container'
 
 type Props = {
   store: Store,
   history: History
+  theme: Theme
 }
 
-const App = ({ store, history }: Props) => (
+const App = ({ store, history, theme }: Props) => (
   <div className="App">
     <Provider store={store}>
       <Router history={history}>
-        <Route
-          path="/"
-          component={Index}
-        />
-        <Route
-          path="/check"
-          component={Check}
-        />
-        <Route
-          path="/whisper"
-          component={Whisper}
-        />
+        <ThemeProvider theme={theme}>
+          <Layout />
+        </ThemeProvider>
       </Router>
     </Provider>
   </div>

@@ -5,6 +5,7 @@ import { State } from '../../../type'
 import React from 'react'
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { connect } from 'react-redux'
+import TextField from '@material-ui/core/TextField'
 import { addSecret } from '../../actions/domain.action'
 
 type Props = InjectedFormProps<FormData>
@@ -17,17 +18,23 @@ type FormError = {
   content?: string
 }
 
+// components/TextField
+const renderTextField = ({ input }: {input: {}}) => {
+  return (
+    <TextField {...input} />
+  )
+}
+
 /**
  * Sometimes there is no need to separate containers and components
  * Just export the component, and export default the container
  */
 export const WhisperSecretForm = ({ handleSubmit, pristine, submitting }: Props) => (
   <form onSubmit={handleSubmit}>
-    <label>Content</label>
     <Field
       name="content"
-      component="input"
-      type="text"
+      component={renderTextField}
+      label="content"
     />
     <button type="submit" disabled={pristine || submitting}>
       Submit
