@@ -12,6 +12,9 @@ export type SecretInput = {
 }
 
 export type State = {
+  auth: {
+    user: Undefinable<User>
+  }
   domain: {
     lastSecretId: Undefinable<string>;
     secrets: Array<Secret>;
@@ -19,4 +22,12 @@ export type State = {
   application: {};
   form: FormStateMap;
   router: RouterState;
+}
+
+// ----------------------
+
+export type User = {
+  id: string
+  name: string
+  roles: Array<string>
 }

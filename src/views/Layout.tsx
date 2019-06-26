@@ -2,7 +2,6 @@ import React from 'react'
 import { Route, Link } from 'react-router-dom'
 import Drawer from '@material-ui/core/Drawer'
 import Button from '@material-ui/core/Button'
-import Index from './index/index.container'
 import Check from './check/check.container'
 import Whisper from './whisper/whisper.container'
 
@@ -17,10 +16,6 @@ const Layout = () => (
       </Button>
     </Drawer>
     <div>
-      <Route
-        path="/"
-        component={Index}
-      />
       <Route
         path="/check"
         component={Check}

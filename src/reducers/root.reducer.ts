@@ -6,8 +6,10 @@ import { reducer as form } from 'redux-form'
 
 import domain from './domain.reducer'
 import application from './application.reducer'
+import auth from './auth.reducer'
 
 const createRootReducer = (history: History) => combineReducers({
+  auth,
   domain,
   application,
   form,

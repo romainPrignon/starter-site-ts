@@ -1,0 +1,18 @@
+.Login {
+  width: 50%;
+  height: 50%;
+  padding: 20px;
+  margin: 5% auto;
+
+  text-align: center;
+
+  background-color: white;
+  color: #252525;
+}
+
+.Login > button {
+  margin: 0 40px;
+
+  background-color: grey;
+  color: white;
+}
