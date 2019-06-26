@@ -1,14 +1,12 @@
 import { AnyAction } from 'redux'
 import { ThunkDispatch } from 'redux-thunk'
 
+import { State } from '../../../type'
+
 import React from 'react'
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { connect } from 'react-redux'
-
 import { fetchSecret } from '../../actions/domain.action'
-import { State } from '../../../type'
-
-type Props = InjectedFormProps<FormData>
 
 type FormData = {
   code: string
@@ -17,6 +15,8 @@ type FormData = {
 type FormError = {
   code?: string
 }
+
+type Props = InjectedFormProps<FormData>
 
 /**
  * Sometimes there is no need to separate containers and components

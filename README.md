@@ -53,6 +53,9 @@ Start the application using Docker
 
 # TODO
 - gestion de l'async 
+  - ca vaut pas le coup de faire un fetching par id d'entité (c'est trop lourd, on se base plutot sur le selector et un if)
+  - la gestion du loading peut etre par composant (pending => affiche loader, error => throw to boundary)
+- access right
 
 - refacto archi (view, feature, component) and add a feature layer
 - refacto redux (domain, application good for 1 dev but what about team ?)

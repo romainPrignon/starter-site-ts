@@ -1,7 +1,7 @@
-import { State, Secret, Undefinable } from '../../type'
+import { State, Secret, Undefinable, Fetchable } from '../../type'
 
 export const getSecrets = (state: State): Array<Secret> =>
-  state.domain.secrets || []
+  state.domain.secrets.data.map((secret: Fetchable<Secret>) => secret.data) || []
 
 export const getSecretById = (state: State, secretId: string): Undefinable<Secret> =>
   getSecrets(state).find(secret => secret.id === secretId)

@@ -5,7 +5,11 @@ import { ADD_SECRET, FETCH_SECRET } from '../actionTypes/domain.actionType'
 
 const initialState = {
   lastSecretId: undefined,
-  secrets: []
+  secrets: {
+    data: [],
+    pending: false,
+    error: undefined
+  }
 }
 
 const domain = (state: State['domain'] = initialState, action: DomainAction): State['domain'] => {
@@ -19,10 +23,18 @@ const domain = (state: State['domain'] = initialState, action: DomainAction): St
     case FETCH_SECRET: {
       return {
         ...state,
-        secrets: [
-          ...state.secrets,
-          action.payload
-        ]
+        secrets: {
+          data: [
+            ...state.secrets.data,
+            {
+              data: action.payload,
+              pending: true,
+              error: undefined
+            }
+          ],
+          pending: true,
+          error: undefined
+        }
       }
     }
     default: {
