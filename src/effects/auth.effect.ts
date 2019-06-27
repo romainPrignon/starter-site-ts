@@ -1,7 +1,7 @@
 import { User } from '../../type'
 
 export const login = async ({ login, mdp }: any): Promise<User> => {
-  await sleep(5000)
+  await sleep(2000)
 
   console.log(login, mdp)
 

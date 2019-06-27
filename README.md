@@ -52,10 +52,6 @@ Start the application using Docker
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
 # TODO
-- login
-  - tester d'englober les deux route dans un composant qui fait le test de isAuth
-  - tester avec withRouter
-  
 - refacto archi (view, feature, component) and add a feature layer
 - refacto redux (domain, application good for 1 dev but what about team ?)
   - actions > domain > secret folder

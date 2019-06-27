@@ -18,11 +18,14 @@ export type AuthAction = LoginAction
 export const login = ({ login: log, mdp }: any): LoginActionDispatcher =>
   async (dispatch: Dispatch<LoginAction>): Promise<LoginAction> => {
     const user = await authEffect.login({ login: log, mdp })
-    // @ts-ignore
-    dispatch(push('/'))
 
-    return dispatch({
+    const action = dispatch({
       type: LOGIN,
       payload: user
     })
+
+    // @ts-ignore
+    dispatch(push('/'))
+
+    return action
   }
