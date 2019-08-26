@@ -1,4 +1,5 @@
 import { History } from 'history'
+import { State } from '../../type'
 
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
@@ -8,7 +9,7 @@ import auth from './auth.reducer'
 import app from './app.reducer'
 import domain from './domain.reducer'
 
-const createRootReducer = (history: History) => combineReducers({
+const createRootReducer = (history: History) => combineReducers<State>({
   auth,
   app,
   domain,
