@@ -4,12 +4,12 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, Route } from 'react-router-dom'
 import { Store } from 'redux'
+import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-router'
 
 import './App.css'
 
-import Index from './views/index/index.container'
-import Check from './views/check/check.container'
-import Whisper from './views/whisper/whisper.container'
+import Layout from './views/layout'
+import Login from './views/login/login.container'
 
 type Props = {
   store: Store,
@@ -19,20 +19,12 @@ type Props = {
 const App = ({ store, history }: Props) => (
   <div className="App">
     <Provider store={store}>
-      <Router history={history}>
-        <Route
-          path="/"
-          component={Index}
-        />
-        <Route
-          path="/check"
-          component={Check}
-        />
-        <Route
-          path="/whisper"
-          component={Whisper}
-        />
-      </Router>
+      <ConnectedRouterProvider history={history}>
+        <Router history={history}>
+          <Route path="/login" component={Login} />
+          <AuthRoute path="/" component={Layout} />
+        </Router>
+      </ConnectedRouterProvider>
     </Provider>
   </div>
 )
