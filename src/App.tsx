@@ -8,6 +8,7 @@ import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-rout
 
 import './App.css'
 
+import AuthRoute from './application/auth'
 import Layout from './views/layout'
 import Login from './views/login/login.container'
 

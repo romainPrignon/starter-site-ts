@@ -1,4 +1,4 @@
-import { State } from '../types'
+import { State } from '../../type'
 
 import React from 'react'
 import { connect } from 'react-redux'
