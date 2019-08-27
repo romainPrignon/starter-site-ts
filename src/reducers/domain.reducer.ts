@@ -1,11 +1,20 @@
 import { State } from '../../type'
-import { DomainAction } from '../actions/domain.action'
+import { DomainAction } from '../../type/domain'
 
-import { ADD_SECRET, FETCH_SECRET } from '../actionTypes/domain.actionType'
+import {
+  ADD_SECRET,
+  FETCH_SECRET_REQUEST,
+  FETCH_SECRET_SUCCESS,
+  FETCH_SECRET_FAILURE
+} from '../constants/domain.constant'
 
-const initialState = {
+const initialState: State['domain'] = {
   lastSecretId: undefined,
-  secrets: []
+  secrets: {
+    data: [],
+    loading: false,
+    error: undefined
+  }
 }
 
 const domain = (state: State['domain'] = initialState, action: DomainAction): State['domain'] => {
@@ -16,13 +25,36 @@ const domain = (state: State['domain'] = initialState, action: DomainAction): St
         lastSecretId: action.payload
       }
     }
-    case FETCH_SECRET: {
+    case FETCH_SECRET_REQUEST: {
       return {
         ...state,
-        secrets: [
+        secrets: {
           ...state.secrets,
-          action.payload
-        ]
+          data: [],
+          loading: true,
+          error: undefined
+        }
+      }
+    }
+    case FETCH_SECRET_SUCCESS: {
+      return {
+        ...state,
+        secrets: {
+          ...state.secrets,
+          data: [...state.secrets.data, action.payload],
+          loading: false,
+          error: undefined
+        }
+      }
+    }
+    case FETCH_SECRET_FAILURE: {
+      return {
+        ...state,
+        secrets: {
+          ...state.secrets,
+          loading: false,
+          error: action.payload
+        }
       }
     }
     default: {

@@ -46,18 +46,30 @@ Build the application for production under `/build`
 ```sh
 npm start
 ```
-Start the application using Docker
+Start the application
 
-## further docs
+## Further docs
 - [Create React App](https://github.com/facebookincubator/create-react-app)
 
+# Guideline
+
+## Small team
+- use view-component directory structure
+- use [domain, application] state only
+
+## Large team
+- use view-feature-component directory structure. Split view into reusable features
+- use [domain > subdomain, application] state. Split domain into subdomain. Split actions and constant as well
+
 # TODO
-- refacto archi (view, feature, component) and add a feature layer
-- refacto redux (domain, application good for 1 dev but what about team ?)
-  - actions > domain > secret folder
-- refacto props ??
+- review how to dispatch in component
+
+- refacto props
   - props, store, components, params, actions
 - add tests (remove || true)
 - css in js
+  - css structure framework
+  - theming
 - add ci
 - test hooks
+- clean docker ?? (dockerfile, makefile)

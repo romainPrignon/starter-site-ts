@@ -1,22 +1,13 @@
 import { FormStateMap } from 'redux-form'
 import { RouterState } from 'connected-react-router'
-export * from './utils'
-
-export type Secret = {
-  id: string
-  content: string
-}
-
-export type SecretInput = {
-  content: string
-}
+import { AuthState } from './auth'
+import { AppState } from './app'
+import { DomainState } from './domain'
 
 export type State = {
-  domain: {
-    lastSecretId: Undefinable<string>;
-    secrets: Array<Secret>;
-  };
-  application: {};
-  form: FormStateMap;
-  router: RouterState;
+  readonly auth: AuthState
+  readonly app: AppState
+  readonly domain: DomainState
+  readonly form: FormStateMap
+  readonly router: RouterState
 }

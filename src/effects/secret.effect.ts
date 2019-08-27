@@ -1,22 +1,20 @@
-import { Secret, SecretInput } from '../../type'
+import { Secret, SecretInput } from '../../type/domain'
 
-import axios from 'axios'
+import { sleep } from '../utils'
 
 export const getSecretById = async (secretId: string): Promise<Secret> => {
-  const response = await axios.get(
-    `https://sketch-api.romainprignon.fr/whisper/${secretId}`,
-    { headers: { 'Access-Control-Allow-Origin': '*' } }
-  )
+  await sleep(5000)
 
-  return response.data
+  return {
+    id: secretId,
+    content: 'this is a secret'
+  }
 }
 
 export const postSecret = async (secret: SecretInput): Promise<string> => {
-  const response = await axios.post(
-    `https://sketch-api.romainprignon.fr/listen`,
-    secret,
-    { headers: { 'Access-Control-Allow-Origin': '*' } }
-  )
+  await sleep(5000)
 
-  return response.data
+  console.log(`POST: ${secret}`)
+
+  return 'some-hash'
 }

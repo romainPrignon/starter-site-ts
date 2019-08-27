@@ -1,13 +1,7 @@
 import { Dispatch } from 'redux'
+import { SomeAction } from '../../type/app'
 
-import { SOME_ACTION } from '../actionTypes/application.actionType'
-
-export type SomeAction = {
-  type: SOME_ACTION,
-  payload: any
-}
-
-export type ApplicationAction = SomeAction
+import { SOME_ACTION } from '../constants/app.constant'
 
 export const someAction = (foo: any) => (dispatch: Dispatch<SomeAction>): SomeAction => {
   return dispatch({

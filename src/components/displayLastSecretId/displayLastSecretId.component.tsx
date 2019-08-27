@@ -1,3 +1,5 @@
+import { Optional } from '../../../type/utils'
+
 import React from 'react'
 
 const style = {
@@ -6,7 +8,7 @@ const style = {
 
 type Props = {
   store: {
-    lastSecretId: string
+    lastSecretId: Optional<string>
   }
 }
 
