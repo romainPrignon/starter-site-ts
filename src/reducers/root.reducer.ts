@@ -4,12 +4,14 @@ import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 import { reducer as form } from 'redux-form'
 
+import auth from './auth.reducer'
+import app from './app.reducer'
 import domain from './domain.reducer'
-import application from './application.reducer'
 
 const createRootReducer = (history: History) => combineReducers({
+  auth,
+  app,
   domain,
-  application,
   form,
   router: connectRouter(history)
 })

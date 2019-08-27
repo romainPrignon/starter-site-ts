@@ -1,4 +1,5 @@
-import { Secret, Undefinable } from '../../../type'
+import { Secret } from '../../../type/domain'
+import { Optional } from '../../../type/utils'
 
 import React from 'react'
 
@@ -8,7 +9,7 @@ const style = {
 
 type Props = {
   store: {
-    secret: Undefinable<Secret>
+    secret: Optional<Secret>
   }
 }
 
