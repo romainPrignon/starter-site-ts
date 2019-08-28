@@ -2,7 +2,7 @@ import { History } from 'history'
 
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Router, Route } from 'react-router-dom'
+import { Router, Route, Switch } from 'react-router-dom'
 import { Store } from 'redux'
 import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-router'
 
@@ -22,8 +22,10 @@ const App = ({ store, history }: Props) => (
     <Provider store={store}>
       <ConnectedRouterProvider history={history}>
         <Router history={history}>
-          <Route path="/login" component={Login} />
-          <AuthRoute path="/" component={Layout} />
+          <Switch>
+            <Route path="/login" component={Login} />
+            <AuthRoute path="/" component={Layout} />
+          </Switch>
         </Router>
       </ConnectedRouterProvider>
     </Provider>

@@ -62,8 +62,6 @@ Start the application
 - use [domain > subdomain, application] state. Split domain into subdomain. Split actions and constant as well
 
 # TODO
-- review how to dispatch in component
-
 - refacto props
   - props, store, components, params, actions
 - add tests (remove || true)
