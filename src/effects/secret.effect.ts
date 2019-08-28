@@ -2,19 +2,23 @@ import { Secret, SecretInput } from '../../type/domain'
 
 import { sleep } from '../utils'
 
+let secretMap: any = {}
+
 export const getSecretById = async (secretId: string): Promise<Secret> => {
-  await sleep(5000)
+  await sleep(500)
 
   return {
     id: secretId,
-    content: 'this is a secret'
+    content: secretMap[secretId].content
   }
 }
 
 export const postSecret = async (secret: SecretInput): Promise<string> => {
-  await sleep(5000)
+  await sleep(500)
 
-  console.log(`POST: ${secret}`)
+  const id = String(new Date().getTime()).slice(-7)
 
-  return 'some-hash'
+  secretMap[id] = secret
+
+  return id
 }

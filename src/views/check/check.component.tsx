@@ -5,6 +5,12 @@ import DisplaySecret from '../../components/displaySecret/displaySecret.containe
 
 import './check.css'
 
+/**
+ * There is two possibility:
+ * <DisplaySecret secretId={id} />
+ * We use a statefull component to store secretId from <CheckSecretForm /> when user type it
+ * We use a selector from form.selector to retreive the secretId
+ */
 const Check = () => (
   <div className="Check">
     <CheckSecretForm />

@@ -2,18 +2,14 @@ import { State } from '../../../type'
 
 import { connect } from 'react-redux'
 import { getSecretById } from '../../selectors/secret.selector'
+import { getCode } from '../../selectors/form.selector'
 import DisplaySecret from './displaySecret.component'
 
 const mapStateToProps = (state: State) => {
-  // TODO: make a selector
-  const secretId = state.form.CheckSecretForm
-    && state.form.CheckSecretForm.values // eslint-disable-line
-    && state.form.CheckSecretForm.values.code // eslint-disable-line
-    || undefined // eslint-disable-line
-
+  const code = getCode(state) || ''
   return {
     store: {
-      secret: getSecretById(state, secretId)
+      secret: getSecretById(state, code)
     }
   }
 }

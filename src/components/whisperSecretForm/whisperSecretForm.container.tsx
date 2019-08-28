@@ -1,11 +1,9 @@
-import { AnyAction } from 'redux'
-import { ThunkDispatch } from 'redux-thunk'
-import { State } from '../../../type'
+import { ThunkDispatch } from '../../../type/utils'
 
 import React from 'react'
 import { Field, reduxForm, InjectedFormProps } from 'redux-form'
 import { connect } from 'react-redux'
-import { addSecret } from '../../actions/domain.action'
+import * as domainAction from '../../actions/domain.action'
 
 type Props = InjectedFormProps<FormData>
 
@@ -48,9 +46,8 @@ const reduxFormOptions = {
   }
 }
 
-// todo abstract ThunkDispatch<State, {}, AnyAction>
-const mapDispatchToProps = (dispach: ThunkDispatch<State, {}, AnyAction>) => ({
-  onSubmit: (values: FormData) => dispach(addSecret({ content: values.content }))
+const mapDispatchToProps = (dispach: ThunkDispatch) => ({
+  onSubmit: (values: FormData) => dispach(domainAction.addSecret({ content: values.content }))
 })
 
 export default connect(null, mapDispatchToProps)(reduxForm(reduxFormOptions)(WhisperSecretForm))
