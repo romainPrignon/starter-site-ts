@@ -62,6 +62,8 @@ Start the application
 - use [domain > subdomain, application] state. Split domain into subdomain. Split actions and constant as well
 
 # TODO
+- datafetching
+  - does one loading state is enougth ? if yes, remove isError, isLoading selector per domain.
 - refacto props
   - props, store, components, params, actions
 - add tests (remove || true)

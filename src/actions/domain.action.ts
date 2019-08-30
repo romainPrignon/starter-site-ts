@@ -6,7 +6,10 @@ import {
   ADD_SECRET,
   FETCH_SECRET_REQUEST,
   FETCH_SECRET_SUCCESS,
-  FETCH_SECRET_FAILURE
+  FETCH_SECRET_FAILURE,
+  FETCH_SECRETS_REQUEST,
+  FETCH_SECRETS_SUCCESS,
+  FETCH_SECRETS_FAILURE
 } from '../constants/domain.constant'
 import * as domainEffect from '../effects/secret.effect'
 
@@ -37,6 +40,28 @@ export const fetchSecret = (secretId: string) => {
     } catch (err) {
       return dispatch({
         type: FETCH_SECRET_FAILURE,
+        payload: err
+      })
+    }
+  }
+}
+
+export const fetchSecrets = () => {
+  return async (dispatch: Dispatch): Promise<Action> => {
+    try {
+      dispatch({
+        type: FETCH_SECRETS_REQUEST
+      })
+
+      const secrets = await domainEffect.getSecrets()
+
+      return dispatch({
+        type: FETCH_SECRETS_SUCCESS,
+        payload: secrets
+      })
+    } catch (err) {
+      return dispatch({
+        type: FETCH_SECRETS_FAILURE,
         payload: err
       })
     }

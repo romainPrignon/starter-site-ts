@@ -5,11 +5,13 @@ import DisplayLastSecretId from '../../components/displayLastSecretId/displayLas
 
 import './whisper.css'
 
-const Whisper = () => (
-  <div className="Whisper">
-    <WhisperSecretForm />
-    <DisplayLastSecretId />
-  </div>
-)
+const Whisper = () => {
+  return (
+    <div className="Whisper">
+      <WhisperSecretForm />
+      <DisplayLastSecretId />
+    </div>
+  )
+}
 
 export default Whisper

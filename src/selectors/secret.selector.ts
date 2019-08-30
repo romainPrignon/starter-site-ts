@@ -10,3 +10,9 @@ export const getSecretById = (state: State, secretId: string): Optional<Secret> 
 
 export const getLastSecretId = (state: State): Optional<string> =>
   state.domain.lastSecretId
+
+export const isFetchSecretsError = (state: State): boolean =>
+  Boolean(state.domain.secrets.error)
+
+export const isFetchSecretsLoading = (state: State): boolean =>
+  Boolean(state.domain.secrets.loading)

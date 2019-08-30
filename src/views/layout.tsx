@@ -1,16 +1,20 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import Index from './index/index.container'
 import Check from './check/check.container'
 import Whisper from './whisper/whisper.container'
+import NotFound from './notFound/notFound.container'
 
 const Layout = () => {
   return (
     <main>
-      <Route path="/" component={Index} />
-      <Route path="/check" component={Check} />
-      <Route path="/whisper" component={Whisper} />
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route path="/check" component={Check} />
+        <Route path="/whisper" component={Whisper} />
+        <Route component={NotFound} />
+      </Switch>
     </main>
   )
 }

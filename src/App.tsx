@@ -9,6 +9,7 @@ import { ConnectedRouter as ConnectedRouterProvider } from 'connected-react-rout
 import './App.css'
 
 import AuthRoute from './application/auth'
+import ErrorHandler from './application/error'
 import Layout from './views/layout'
 import Login from './views/login/login.container'
 
@@ -22,10 +23,12 @@ const App = ({ store, history }: Props) => (
     <Provider store={store}>
       <ConnectedRouterProvider history={history}>
         <Router history={history}>
-          <Switch>
-            <Route path="/login" component={Login} />
-            <AuthRoute path="/" component={Layout} />
-          </Switch>
+          <ErrorHandler>
+            <Switch>
+              <Route path="/login" component={Login} />
+              <AuthRoute path="/" component={Layout} />
+            </Switch>
+          </ErrorHandler>
         </Router>
       </ConnectedRouterProvider>
     </Provider>

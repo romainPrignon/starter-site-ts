@@ -11,11 +11,13 @@ import './check.css'
  * We use a statefull component to store secretId from <CheckSecretForm /> when user type it
  * We use a selector from form.selector to retreive the secretId
  */
-const Check = () => (
-  <div className="Check">
-    <CheckSecretForm />
-    <DisplaySecret />
-  </div>
-)
+const Check = () => {
+  return (
+    <div className="Check">
+      <CheckSecretForm />
+      <DisplaySecret />
+    </div>
+  )
+}
 
 export default Check
